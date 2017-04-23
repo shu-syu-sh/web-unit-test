@@ -1,0 +1,50 @@
+{
+    "name": "web-unit-test",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "tsc -p tsconfig.test.json && nyc ava -v --color \"generated/test/**/*spec.js\"",
+        "nyan": "tsc -p tsconfig.test.json && nyc ava -v --color --tap \"generated/test/**/*spec.js\" | tap-nyan"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shu-syu-sh/web-unit-test.git"
+    },
+    "author": "shu-syu-sh",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/shu-syu-sh/web-unit-test/issues"
+    },
+    "homepage": "https://github.com/shu-syu-sh/web-unit-test#readme",
+    "nyc": {
+        "exclude": [
+            "generated/test/**/*spec.js"
+        ],
+        "reporter": [
+            "lcov"
+        ],
+        "report-dir": "coverage"
+    },
+    "ava": {
+        "power-assert": true
+    },
+    "devDependencies": {
+        "ava": "0.19.1",
+        "css-loader": "0.28.0",
+        "extract-text-webpack-plugin": "2.1.0",
+        "file-loader": "0.11.1",
+        "html-loader": "0.4.5",
+        "null-loader": "0.1.1",
+        "nyc": "10.2.0",
+        "raw-loader": "0.5.1",
+        "rimraf": "2.6.1",
+        "style-loader": "0.16.1",
+        "tap-nyan": "^1.1.0",
+        "ts-loader": "2.0.3",
+        "tslint": "5.1.0",
+        "tslint-loader": "3.5.3",
+        "typescript": "2.2.2",
+        "webpack": "2.4.1",
+        "webpack-merge": "4.1.0"
+    }
+}
